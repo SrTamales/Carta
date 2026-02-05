@@ -45,7 +45,8 @@ body {
   pointer-events: none;
 }
 
-  .signature {
+  @media (max-width: 600px) {
+    .signature {
     font-size: 1.15em;        /* más grande */
     font-style: normal;      /* se lee mejor en móvil */
     font-weight: 500;        /* un poco más firme */
@@ -62,7 +63,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+
 
 
 
