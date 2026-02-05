@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+  const textEl = document.getElementById("dedication-text");
+  const countdownEl = document.getElementById("countdown");
+  const floating = document.getElementById("floating-objects");
+
+});
+
 fetch('Img/lirios.svg')
   .then(res => res.text())
   .then(svgText => {
