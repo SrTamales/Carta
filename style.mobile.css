@@ -108,4 +108,56 @@ body {
   width: 13px;
   height: 18px;
 }
+/* =========================
+   MODO CELULAR
+   ========================= */
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  #scene {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 12px;
+  }
+
+  #tree-container {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  #tree-container svg {
+    width: 100%;
+    height: auto;
+  }
+
+  #letter {
+    max-width: 100%;
+    padding: 22px 20px;
+    border-radius: 14px;
+  }
+
+  #dedication-text {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .signature {
+    font-size: 0.95em;
+  }
+
+  #countdown {
+    font-size: 0.85em;
+  }
+
+}
+@media (max-width: 600px) {
+  svg.move-and-scale {
+    transform: scale(0.9) translateY(-10px);
+  }
+}
+
 
