@@ -1,5 +1,3 @@
-/*© Zero - Código libre no comercial*/
-
 body {
   
   font-size: 16px;
@@ -144,7 +142,7 @@ body {
   }
 
   .signature {
-    font-size: 0.95em;
+    font-size: 2.0em;
   }
 
   #countdown {
