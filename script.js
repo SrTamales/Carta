@@ -91,8 +91,15 @@ function getURLParam(param) {
 }
 
 function showDedicationText() {
-  const container = document.getElementById('dedication-text');
-  if (!container) return;
+  const para = getURLParam('para') || 'Para ti';
+  const mensaje = getURLParam('mensaje') || 'Esta carta es para alguien muy especial.';
+  const firma = getURLParam('firma') || '';
+
+  document.getElementById('dedication').innerText = para;
+  document.getElementById('letter-text').innerText = mensaje;
+  document.getElementById('signature').innerText = firma;
+}
+
 
   let text = getURLParam('text');
   if (!text) {
