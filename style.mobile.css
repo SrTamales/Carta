@@ -83,17 +83,18 @@ body {
   #dedication-text {
     font-size: 1em;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
   .signature {
     font-size: 1.5em;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 1rem;
     opacity: 1; /* que se vea más firme en móvil */
   }
 
   #countdown {
     font-size: 0.85em;
+    margin-top: 1rem;
   }
 }
-
