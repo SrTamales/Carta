@@ -52,24 +52,48 @@ body {
   transition: opacity 0.8s, transform 0.8s;
 }
 
-/* ===== Móvil ===== */
 @media (max-width: 600px) {
-  .tree-container {
-    width: 90%;
-    max-width: 280px;
-    margin-bottom: 1.5rem;
+  #scene {
+    flex-direction: column;       /* columna vertical */
+    align-items: center;          /* centrado horizontal */
+    justify-content: flex-start;  /* empieza desde arriba */
+    gap: 20px;                    /* espacio entre lirio y carta */
+    padding: 20px;
   }
 
-  .dedication-text {
+  #tree-container {
+    width: 90%;
+    max-width: 280px;
+    margin-bottom: 1rem;
+  }
+
+  #tree-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(0.9); /* ajusta tamaño del lirio si es necesario */
+  }
+
+  #letter {
+    max-width: 95%;
+    text-align: center; /* todo el texto centrado */
+    padding: 22px 20px;
+  }
+
+  #dedication-text {
     font-size: 1em;
     line-height: 1.6;
   }
 
   .signature {
     font-size: 1.5em;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 1; /* que se vea más firme en móvil */
   }
 
-  svg.move-and-scale {
-    transform: scale(0.9);
+  #countdown {
+    font-size: 0.85em;
   }
 }
+
