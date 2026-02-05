@@ -1,7 +1,7 @@
 // =======================
 // SVG + ANIMACIÓN
 // =======================
-fetch('./img/lirios.svg')
+fetch('lirios.svg')
   .then(res => {
     if (!res.ok) throw new Error('No se pudo cargar el SVG');
     return res.text();
