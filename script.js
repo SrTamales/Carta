@@ -9,6 +9,8 @@ fetch('./img/lirios.svg')
   .then(svgText => {
 
     const container = document.getElementById('tree-container');
+    if (!container) return;
+
     container.innerHTML = svgText;
 
     const svg = container.querySelector('svg');
@@ -82,8 +84,9 @@ fetch('./img/lirios.svg')
   })
   .catch(err => console.error(err));
 
+
 // =======================
-// TEXTO + FIRMA
+// TEXTO
 // =======================
 function getURLParam(param) {
   const params = new URLSearchParams(window.location.search);
@@ -91,54 +94,42 @@ function getURLParam(param) {
 }
 
 function showDedicationText() {
-  const para = getURLParam('para') || 'Para ti';
-  const mensaje = getURLParam('mensaje') || 'Esta carta es para alguien muy especial.';
-  const firma = getURLParam('firma') || '';
+  const container = document.getElementById('dedication-text');
+  if (!container) return;
 
-  document.getElementById('dedication').innerText = para;
-  document.getElementById('letter-text').innerText = mensaje;
-  document.getElementById('signature').innerText = firma;
+  const mensaje =
+    getURLParam('mensaje')
+      ? decodeURIComponent(getURLParam('mensaje')).replace(/\\n/g, '\n')
+      : `Para mi niña hermosa:\n\nDesde que llegaste, mi mundo es más bonito contigo.`;
+
+  container.textContent = mensaje;
+  showSignature();
 }
 
 
-  let text = getURLParam('text');
-  if (!text) {
-    text = `Para mi niña hermosa:\n\nDesde que llegaste, mi mundo es más bonito contigo.`;
-  } else {
-    text = decodeURIComponent(text).replace(/\\n/g, '\n');
-  }
-
-  container.textContent = '';
-  let i = 0;
-
-  function type() {
-    if (i <= text.length) {
-      container.textContent = text.slice(0, i++);
-      setTimeout(type, text[i - 2] === '\n' ? 350 : 45);
-    } else {
-      setTimeout(showSignature, 600);
-    }
-  }
-  type();
-}
-
+// =======================
+// FIRMA
+// =======================
 function showSignature() {
   const dedication = document.getElementById('dedication-text');
-  let signature = dedication.querySelector('#signature');
+  if (!dedication) return;
+
+  let signature = dedication.querySelector('.signature');
 
   if (!signature) {
     signature = document.createElement('div');
-    signature.id = 'signature';
     signature.className = 'signature';
     dedication.appendChild(signature);
   }
 
-  let firma = getURLParam('firma');
+  const firma = getURLParam('firma');
   signature.textContent = firma
     ? decodeURIComponent(firma)
-    : "¿Quieres ser mi novia?";
+    : '¿Quieres ser mi novia?';
+
   signature.classList.add('visible');
 }
+
 
 // =======================
 // PÉTALOS
@@ -148,6 +139,7 @@ function startFloatingObjects() {
   if (!container) return;
 
   let count = 0;
+
   function spawn() {
     const el = document.createElement('div');
     el.className = 'floating-petal';
@@ -167,8 +159,10 @@ function startFloatingObjects() {
     setTimeout(() => el.remove(), duration + 500);
     setTimeout(spawn, count++ < 30 ? 400 : 1200);
   }
+
   spawn();
 }
+
 
 // =======================
 // CONTADOR
@@ -200,6 +194,7 @@ function showCountdown() {
   update();
   setInterval(update, 1000);
 }
+
 
 // =======================
 // MÚSICA
