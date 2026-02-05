@@ -1,3 +1,5 @@
+console.log("JS cargado correctamente");
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const textEl = document.getElementById("dedication-text");
