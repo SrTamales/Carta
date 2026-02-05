@@ -85,6 +85,11 @@ fetch('./img/lirios.svg')
 // =======================
 // TEXTO + FIRMA
 // =======================
+function getURLParam(param) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(param);
+}
+
 function showDedicationText() {
   const container = document.getElementById('dedication-text');
   if (!container) return;
