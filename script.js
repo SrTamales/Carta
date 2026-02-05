@@ -1,11 +1,4 @@
 // =======================
-// UTILIDAD URL PARAMS
-// =======================
-function getURLParam(name) {
-  return new URL(window.location.href).searchParams.get(name);
-}
-
-// =======================
 // SVG + ANIMACIÓN
 // =======================
 fetch('./img/lirios.svg')
