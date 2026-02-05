@@ -100,7 +100,7 @@ function showDedicationText() {
   const mensaje =
     getURLParam('mensaje')
       ? decodeURIComponent(getURLParam('mensaje')).replace(/\\n/g, '\n')
-      : `Para mi niña hermosa:\n\n A veces pienso que conocerte no solo fue casualidad, fue causalidad. Es como si el universo se hubiera empeñado en que nuestros hilos nunca se soltaran del todo, y por eso seguimos aquí, cuidándonos y compartiendo la vida como si el tiempo no hubiera pasado.La realidad es que, aunque nunca nos fuimos, mi corazón te sigue eligiendo en cada silencio y en cada risa. No me conformo con solo tenerte cerca; te quiero conmigo, de verdad y para siempre. Quiero que volvamos a ser ese 'nosotros' que nos hacía brillar, porque mi vida es mucho más bonita si puedo llamarte mi novia. Por eso, con todo lo que siento, te hago esta pregunta.`;
+      : `Para mi niña hermosa:\n\nA veces pienso que conocerte no solo fue casualidad, fue causalidad. Es como si el universo se hubiera empeñado en que nuestros hilos nunca se soltaran del todo, y por eso seguimos aquí, cuidándonos y compartiendo la vida como si el tiempo no hubiera pasado.La realidad es que, aunque nunca nos fuimos, mi corazón te sigue eligiendo en cada silencio y en cada risa. No me conformo con solo tenerte cerca; te quiero conmigo, de verdad y para siempre. Quiero que volvamos a ser ese 'nosotros' que nos hacía brillar, porque mi vida es mucho más bonita si puedo llamarte mi novia. Por eso, con todo lo que siento, te hago esta pregunta.`;
 
   container.textContent = mensaje;
   showSignature();
