@@ -18,6 +18,13 @@ fetch('./img/lirios.svg')
 
     const allPaths = Array.from(svg.querySelectorAll('path'));
 
+    setTimeout(() => {
+  document.querySelectorAll('#letter .fade-in').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 1200); // espera 1.2s para coincidir con la animación del lirio
+
+
     // ===== DEFS =====
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     defs.innerHTML = `
